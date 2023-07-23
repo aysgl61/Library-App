@@ -30,14 +30,14 @@ namespace Library_App
             baglanti.Open();  //önce veritabanına olan bağlantıyı açtık
             SqlCommand komut = new SqlCommand("insert into Member(tc,adsoyad,yas,cinsiyet,telefon,email,okukitapsayisi,adres) values(@tc,@adsoyad,@yas,@cinsiyet,@telefon,@email,@okukitapsayisi,@adres)", baglanti); //komut oluşturmak için obje oluşturduk
 
-            komut.Parameters.AddWithValue("@tc",textBox1.Text);  //form üzerinde girmiş olduğumuz text'leri veritabanına ekliyoruz
+            komut.Parameters.AddWithValue("@tc",TCTxt.Text);  //form üzerinde girmiş olduğumuz text'leri veritabanına ekliyoruz
             komut.Parameters.AddWithValue("@adsoyad", NameTxt.Text);
             komut.Parameters.AddWithValue("@yas", AgeTxt.Text);
             komut.Parameters.AddWithValue("@cinsiyet", GenderComboBOx.Text);
             komut.Parameters.AddWithValue("@telefon", TelTxt.Text);
             komut.Parameters.AddWithValue("@email", MailTxt.Text);
             komut.Parameters.AddWithValue("@okukitapsayisi", BookNumberTxt.Text);
-            komut.Parameters.AddWithValue("@adres", addresstxt.Text);
+            komut.Parameters.AddWithValue("@adres", addrestxt.Text);
             komut.ExecuteNonQuery();  //verilen komutları oku
 
             baglanti.Close();

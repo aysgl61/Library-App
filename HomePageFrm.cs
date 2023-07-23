@@ -22,5 +22,11 @@ namespace Library_App
             AddMemberFrm addm = new AddMemberFrm();
             addm.ShowDialog();  //bu butona basınca üye ekleme ekranı açılacak
         }
+
+        private void MemberListingBtn_Click(object sender, EventArgs e)
+        {
+            ListMembers lstm = new ListMembers();
+            lstm.ShowDialog();
+        }
     }
 }
