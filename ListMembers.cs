@@ -57,14 +57,44 @@ namespace Library_App
 
         private void TCFindTxt_TextChanged(object sender, EventArgs e)
         {
-            daset.Tables["Member"].Clear(); //tablodaki verilerde çakışma olmaması için önce temizliyoruz
-            baglanti.Open();
-            SqlDataAdapter adtr = new SqlDataAdapter("select *from Member where like '%"+TCFindTxt.Text+"%'", baglanti);
-            adtr.Fill(daset, "Member");
-            dataGridView1.DataSource = daset.Tables["Member"];
-            baglanti.Close();
+            // Textbox'tan girilen değeri alalım
+            string tcValue = TCFindTxt.Text.Trim();
 
+            // Eğer girilen değer boş ise, veritabanından tüm verileri çekelim
+            if (string.IsNullOrEmpty(tcValue))
+            {
+                ListMember();
+                return;
+            }
+
+            // Girilen değeri içeren verileri çekmek için parametreli sorgu kullanalım
+            string query = "SELECT * FROM Member WHERE tc LIKE @tc";
+
+            // Parametre oluşturalım
+            SqlParameter parameter = new SqlParameter("@tc", "%" + tcValue + "%");
+
+            // Bağlantıyı açalım ve verileri çekelim
+            try
+            {
+                baglanti.Open();
+                SqlDataAdapter adtr = new SqlDataAdapter(query, baglanti);
+                adtr.SelectCommand.Parameters.Add(parameter);
+                daset.Tables["Member"].Clear();
+                adtr.Fill(daset, "Member");
+                dataGridView1.DataSource = daset.Tables["Member"];
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda hata mesajını gösterelim
+                MessageBox.Show("Hata: " + ex.Message);
+            }
+            finally
+            {
+                // Bağlantıyı kapatalım
+                baglanti.Close();
+            }
         }
+
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
@@ -73,13 +103,13 @@ namespace Library_App
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            DialogResult dialog;
-            dialog = MessageBox.Show("Bu kaydı silmek mi istiyorsunuz?", "Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Bu kaydı silmek mi istiyorsunuz?", "Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if(dialog == DialogResult.Yes)
+            if (dialogResult == DialogResult.Yes)
             {
                 baglanti.Open();
-                SqlCommand komut = new SqlCommand("delete from Member where like tc=@tc", baglanti); //parameters ile erişeceğimiz için @ kullandık
+                SqlCommand komut = new SqlCommand("DELETE FROM Member WHERE tc=@tc", baglanti);
+                komut.Parameters.AddWithValue("@tc", TCTxt.Text);
                 komut.ExecuteNonQuery();
                 baglanti.Close();
                 MessageBox.Show("Silme işlemi gerçekleşti.");
@@ -95,8 +125,8 @@ namespace Library_App
                     }
                 }
             }
-            
         }
+
 
         private void ListMember()
         {
@@ -108,40 +138,62 @@ namespace Library_App
 
         private void ListMembers_Load(object sender, EventArgs e)
         {
-            // TODO: Bu kod satırı 'libraryAppDataSet.Member' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            this.memberTableAdapter.Fill(this.libraryAppDataSet.Member);
-            ListMember(); //form açıldığında üye listesi gelsin
+            // Önce bağlantıyı açalım
+            baglanti.Open();
+
+            // SqlDataAdapter ile verileri çekip DataSet'e dolduralım
+            SqlDataAdapter adtr = new SqlDataAdapter("SELECT * FROM Member", baglanti);
+            adtr.Fill(daset, "Member");
+
+            // DataGridView'e DataSet'teki tabloyu bağlayalım
+            dataGridView1.DataSource = daset.Tables["Member"];
+
+            // Bağlantıyı kapatmayı unutmayalım
+            baglanti.Close();
         }
+
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand("update Member set adsoyad=@adsoyad,yas=@yas,cinsiyet=@cinsiyet,telefon=@telefon,email=@email,okukitapsayisi=@okukitapsayisi,adres=@adres where tc=@tc", baglanti);
-
-            komut.Parameters.AddWithValue("@tc", TCTxt.Text);
-            komut.Parameters.AddWithValue("@adsoyad", NameTxt.Text);
-            komut.Parameters.AddWithValue("@yas", AgeTxt.Text);
-            komut.Parameters.AddWithValue("@cinsiyet", GenderComboBOx.Text);
-            komut.Parameters.AddWithValue("@telefon", TelTxt.Text);
-            komut.Parameters.AddWithValue("@adres", addresstxt.Text);
-            komut.Parameters.AddWithValue("@email", MailTxt.Text);
-            komut.Parameters.AddWithValue("@okukitapsaiyisi",int.Parse(BookNumberTxt.Text));
-
-            komut.ExecuteNonQuery();
-            baglanti.Close();
-
-            MessageBox.Show("Güncelleme işlemi gerçekleşti.");
-
-            daset.Tables["Member"].Clear();
-            ListMember();
-
-            foreach (Control item in Controls)
+            try
             {
-                if (item is TextBox)
+                baglanti.Open();
+                SqlCommand komut = new SqlCommand("UPDATE Member SET adsoyad=@adsoyad, yas=@yas, cinsiyet=@cinsiyet, telefon=@telefon, email=@email, okukitapsayisi = @okukitapsayisi, adres = @adres WHERE tc = @tc", baglanti);
+
+
+
+
+                komut.Parameters.AddWithValue("@tc", TCTxt.Text);
+                komut.Parameters.AddWithValue("@adsoyad", NameTxt.Text);
+                komut.Parameters.AddWithValue("@yas", AgeTxt.Text);
+                komut.Parameters.AddWithValue("@cinsiyet", GenderComboBOx.Text);
+                komut.Parameters.AddWithValue("@telefon", TelTxt.Text);
+                komut.Parameters.AddWithValue("@adres", addresstxt.Text);
+                komut.Parameters.AddWithValue("@email", MailTxt.Text);
+                komut.Parameters.AddWithValue("@okukitapsayisi", int.Parse(BookNumberTxt.Text));
+
+                komut.ExecuteNonQuery();
+                baglanti.Close();
+
+                MessageBox.Show("Güncelleme işlemi gerçekleşti.");
+
+                daset.Tables["Member"].Clear();
+                ListMember();
+
+                foreach (Control item in Controls)
                 {
-                    item.Text = "";
+                    if (item is TextBox)
+                    {
+                        item.Text = "";
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                // Hata durumunda hata mesajını gösterelim
+                MessageBox.Show("Hata: " + ex.Message);
+            }
         }
+
     }
 }
