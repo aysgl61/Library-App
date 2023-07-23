@@ -38,7 +38,7 @@
             this.BookNumberTxt = new System.Windows.Forms.TextBox();
             this.MailTxt = new System.Windows.Forms.TextBox();
             this.AgeTxt = new System.Windows.Forms.TextBox();
-            this.TCTxt = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.BookNumLbl = new System.Windows.Forms.Label();
             this.MailLbl = new System.Windows.Forms.Label();
             this.TelLbl = new System.Windows.Forms.Label();
@@ -145,13 +145,13 @@
             this.AgeTxt.Size = new System.Drawing.Size(155, 22);
             this.AgeTxt.TabIndex = 28;
             // 
-            // TCTxt
+            // textBox1
             // 
-            this.TCTxt.Location = new System.Drawing.Point(138, 153);
-            this.TCTxt.Name = "TCTxt";
-            this.TCTxt.Size = new System.Drawing.Size(155, 22);
-            this.TCTxt.TabIndex = 26;
-            this.TCTxt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Location = new System.Drawing.Point(138, 153);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(155, 22);
+            this.textBox1.TabIndex = 26;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // BookNumLbl
             // 
@@ -413,7 +413,7 @@
             this.Controls.Add(this.MailTxt);
             this.Controls.Add(this.AgeTxt);
             this.Controls.Add(this.NameTxt);
-            this.Controls.Add(this.TCTxt);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.BookNumLbl);
             this.Controls.Add(this.MailLbl);
             this.Controls.Add(this.TelLbl);
@@ -449,7 +449,7 @@
         private System.Windows.Forms.TextBox BookNumberTxt;
         private System.Windows.Forms.TextBox MailTxt;
         private System.Windows.Forms.TextBox AgeTxt;
-        private System.Windows.Forms.TextBox TCTxt;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label BookNumLbl;
         private System.Windows.Forms.Label MailLbl;
         private System.Windows.Forms.Label TelLbl;

@@ -33,13 +33,13 @@ namespace Library_App
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            TCTxt.Text = dataGridView1.CurrentRow.Cells["tc"].Value.ToString(); //veritabanındaki tc'yi ilgili textbox'ta göster
+            textBox1.Text = dataGridView1.CurrentRow.Cells["tc"].Value.ToString(); //veritabanındaki tc'yi ilgili textbox'ta göster
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             baglanti.Open();
-            SqlCommand komut = new SqlCommand("select *from Member where tc like '"+TCTxt.Text+"'", baglanti);  //Member tablosundaki verilere ulaştık. 
+            SqlCommand komut = new SqlCommand("select *from Member where tc like '"+textBox1.Text+"'", baglanti);  //Member tablosundaki verilere ulaştık. 
             SqlDataReader read = komut.ExecuteReader(); //tablodaki verileri textlere atar
             while (read.Read()) //tablodaki veriler okunduğu sürece
             {
@@ -108,8 +108,8 @@ namespace Library_App
             if (dialogResult == DialogResult.Yes)
             {
                 baglanti.Open();
-                SqlCommand komut = new SqlCommand("DELETE FROM Member WHERE tc=@tc", baglanti);
-                komut.Parameters.AddWithValue("@tc", TCTxt.Text);
+                SqlCommand komut = new SqlCommand("delete from Member where tc=@tc", baglanti);
+                komut.Parameters.AddWithValue("@tc", dataGridView1.CurrentRow.Cells["tc"].Value.ToString());
                 komut.ExecuteNonQuery();
                 baglanti.Close();
                 MessageBox.Show("Silme işlemi gerçekleşti.");
@@ -155,45 +155,37 @@ namespace Library_App
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            try
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("update Member set adsoyad=@adsoyad,yas=@yas,cinsiyet=@cinsiyet,telefon=@telefon,email=@email,adres=@adres where tc=@tc", baglanti);
+
+            komut.Parameters.AddWithValue("@tc", textBox1.Text);
+            komut.Parameters.AddWithValue("@adsoyad", NameTxt.Text);
+            komut.Parameters.AddWithValue("@yas", AgeTxt.Text);
+            komut.Parameters.AddWithValue("@cinsiyet", GenderComboBOx.Text);
+            komut.Parameters.AddWithValue("@telefon", TelTxt.Text);
+            komut.Parameters.AddWithValue("@adres", addresstxt.Text);
+            komut.Parameters.AddWithValue("@email", MailTxt.Text);
+           // komut.Parameters.AddWithValue("@okukitapsaiyisi", int.Parse(BookNumberTxt.Text));
+
+            komut.ExecuteNonQuery();
+            baglanti.Close();
+
+            MessageBox.Show("Güncelleme işlemi gerçekleşti.");
+
+            daset.Tables["Member"].Clear();
+            ListMember();
+
+            foreach (Control item in Controls)
             {
-                baglanti.Open();
-                SqlCommand komut = new SqlCommand("UPDATE Member SET adsoyad=@adsoyad, yas=@yas, cinsiyet=@cinsiyet, telefon=@telefon, email=@email, okukitapsayisi = @okukitapsayisi, adres = @adres WHERE tc = @tc", baglanti);
-
-
-
-
-                komut.Parameters.AddWithValue("@tc", TCTxt.Text);
-                komut.Parameters.AddWithValue("@adsoyad", NameTxt.Text);
-                komut.Parameters.AddWithValue("@yas", AgeTxt.Text);
-                komut.Parameters.AddWithValue("@cinsiyet", GenderComboBOx.Text);
-                komut.Parameters.AddWithValue("@telefon", TelTxt.Text);
-                komut.Parameters.AddWithValue("@adres", addresstxt.Text);
-                komut.Parameters.AddWithValue("@email", MailTxt.Text);
-                komut.Parameters.AddWithValue("@okukitapsayisi", int.Parse(BookNumberTxt.Text));
-
-                komut.ExecuteNonQuery();
-                baglanti.Close();
-
-                MessageBox.Show("Güncelleme işlemi gerçekleşti.");
-
-                daset.Tables["Member"].Clear();
-                ListMember();
-
-                foreach (Control item in Controls)
+                if (item is TextBox)
                 {
-                    if (item is TextBox)
-                    {
-                        item.Text = "";
-                    }
+                    item.Text = "";
                 }
             }
-            catch (Exception ex)
-            {
-                // Hata durumunda hata mesajını gösterelim
-                MessageBox.Show("Hata: " + ex.Message);
-            }
+            
         }
+
+
 
     }
 }
