@@ -135,6 +135,7 @@
             this.BookListingBtn.TabIndex = 1;
             this.BookListingBtn.Text = "Kitap Listeleme İşlemleri";
             this.BookListingBtn.UseVisualStyleBackColor = false;
+            this.BookListingBtn.Click += new System.EventHandler(this.BookListingBtn_Click);
             // 
             // BookAddBtn
             // 

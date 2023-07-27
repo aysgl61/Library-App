@@ -144,17 +144,14 @@ namespace Library_App
 
         private void ListMembers_Load(object sender, EventArgs e)
         {
-            // Önce bağlantıyı açalım
+            
             baglanti.Open();
 
-            // SqlDataAdapter ile verileri çekip DataSet'e dolduralım
             SqlDataAdapter adtr = new SqlDataAdapter("SELECT * FROM Member", baglanti);
             adtr.Fill(daset, "Member");
 
-            // DataGridView'e DataSet'teki tabloyu bağlayalım
             dataGridView1.DataSource = daset.Tables["Member"];
 
-            // Bağlantıyı kapatmayı unutmayalım
             baglanti.Close();
         }
 

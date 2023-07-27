@@ -34,5 +34,11 @@ namespace Library_App
             AddBookFrm addb = new AddBookFrm();
             addb.ShowDialog();
         }
+
+        private void BookListingBtn_Click(object sender, EventArgs e)
+        {
+            ListBooksFrm lstb = new ListBooksFrm();
+            lstb.ShowDialog();
+        }
     }
 }
