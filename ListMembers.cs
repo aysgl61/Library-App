@@ -107,25 +107,31 @@ namespace Library_App
 
             if (dialogResult == DialogResult.Yes)
             {
-                baglanti.Open();
-                SqlCommand komut = new SqlCommand("delete from Member where tc=@tc", baglanti);
-                komut.Parameters.AddWithValue("@tc", dataGridView1.CurrentRow.Cells["tc"].Value.ToString());
-                komut.ExecuteNonQuery();
-                baglanti.Close();
-                MessageBox.Show("Silme işlemi gerçekleşti.");
-
-                daset.Tables["Member"].Clear();
-                ListMember();
-
-                foreach (Control item in Controls)
+                if (dataGridView1.CurrentRow != null)
                 {
-                    if (item is TextBox)
+                    try
                     {
-                        item.Text = "";
+                        string selectedTC = dataGridView1.CurrentRow.Cells["tc"].Value.ToString();
+
+                        baglanti.Open();
+                        SqlCommand komut = new SqlCommand("DELETE FROM Member WHERE tc=@tc", baglanti);
+                        komut.Parameters.AddWithValue("@tc", selectedTC);
+                        komut.ExecuteNonQuery();
+                        baglanti.Close();
+
+                        MessageBox.Show("Silme işlemi gerçekleşti.");
+
+                        daset.Tables["Member"].Clear();
+                        ListMember();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Hata: " + ex.Message);
                     }
                 }
             }
         }
+
 
 
         private void ListMember()
@@ -182,10 +188,10 @@ namespace Library_App
                     item.Text = "";
                 }
             }
-            
+            ListMember();
         }
 
-
+       
 
     }
 }

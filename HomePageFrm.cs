@@ -28,5 +28,11 @@ namespace Library_App
             ListMembers lstm = new ListMembers();
             lstm.ShowDialog();
         }
+
+        private void BookAddBtn_Click(object sender, EventArgs e)
+        {
+            AddBookFrm addb = new AddBookFrm();
+            addb.ShowDialog();
+        }
     }
 }

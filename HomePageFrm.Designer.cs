@@ -55,7 +55,7 @@
             this.panel1.BackColor = System.Drawing.Color.DarkCyan;
             this.panel1.Controls.Add(this.HeaderLabel);
             this.panel1.Location = new System.Drawing.Point(-11, 41);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1088, 91);
             this.panel1.TabIndex = 0;
@@ -79,9 +79,9 @@
             this.MemberGBox.Controls.Add(this.MemberAddBtn);
             this.MemberGBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.MemberGBox.Location = new System.Drawing.Point(77, 171);
-            this.MemberGBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MemberGBox.Margin = new System.Windows.Forms.Padding(4);
             this.MemberGBox.Name = "MemberGBox";
-            this.MemberGBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MemberGBox.Padding = new System.Windows.Forms.Padding(4);
             this.MemberGBox.Size = new System.Drawing.Size(323, 143);
             this.MemberGBox.TabIndex = 1;
             this.MemberGBox.TabStop = false;
@@ -91,7 +91,7 @@
             // 
             this.MemberListingBtn.BackColor = System.Drawing.Color.DarkCyan;
             this.MemberListingBtn.Location = new System.Drawing.Point(24, 89);
-            this.MemberListingBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MemberListingBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MemberListingBtn.Name = "MemberListingBtn";
             this.MemberListingBtn.Size = new System.Drawing.Size(279, 38);
             this.MemberListingBtn.TabIndex = 1;
@@ -103,7 +103,7 @@
             // 
             this.MemberAddBtn.BackColor = System.Drawing.Color.DarkCyan;
             this.MemberAddBtn.Location = new System.Drawing.Point(24, 43);
-            this.MemberAddBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MemberAddBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MemberAddBtn.Name = "MemberAddBtn";
             this.MemberAddBtn.Size = new System.Drawing.Size(279, 38);
             this.MemberAddBtn.TabIndex = 0;
@@ -117,9 +117,9 @@
             this.BookGBox.Controls.Add(this.BookAddBtn);
             this.BookGBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BookGBox.Location = new System.Drawing.Point(649, 171);
-            this.BookGBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BookGBox.Margin = new System.Windows.Forms.Padding(4);
             this.BookGBox.Name = "BookGBox";
-            this.BookGBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BookGBox.Padding = new System.Windows.Forms.Padding(4);
             this.BookGBox.Size = new System.Drawing.Size(323, 143);
             this.BookGBox.TabIndex = 2;
             this.BookGBox.TabStop = false;
@@ -129,7 +129,7 @@
             // 
             this.BookListingBtn.BackColor = System.Drawing.Color.DarkCyan;
             this.BookListingBtn.Location = new System.Drawing.Point(21, 89);
-            this.BookListingBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BookListingBtn.Margin = new System.Windows.Forms.Padding(4);
             this.BookListingBtn.Name = "BookListingBtn";
             this.BookListingBtn.Size = new System.Drawing.Size(279, 38);
             this.BookListingBtn.TabIndex = 1;
@@ -140,12 +140,13 @@
             // 
             this.BookAddBtn.BackColor = System.Drawing.Color.DarkCyan;
             this.BookAddBtn.Location = new System.Drawing.Point(21, 43);
-            this.BookAddBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BookAddBtn.Margin = new System.Windows.Forms.Padding(4);
             this.BookAddBtn.Name = "BookAddBtn";
             this.BookAddBtn.Size = new System.Drawing.Size(279, 38);
             this.BookAddBtn.TabIndex = 0;
             this.BookAddBtn.Text = "Kitap Ekleme İşlemleri";
             this.BookAddBtn.UseVisualStyleBackColor = false;
+            this.BookAddBtn.Click += new System.EventHandler(this.BookAddBtn_Click);
             // 
             // DepositBookGBox
             // 
@@ -154,9 +155,9 @@
             this.DepositBookGBox.Controls.Add(this.DepositBookListingBtn);
             this.DepositBookGBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DepositBookGBox.Location = new System.Drawing.Point(77, 359);
-            this.DepositBookGBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DepositBookGBox.Margin = new System.Windows.Forms.Padding(4);
             this.DepositBookGBox.Name = "DepositBookGBox";
-            this.DepositBookGBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DepositBookGBox.Padding = new System.Windows.Forms.Padding(4);
             this.DepositBookGBox.Size = new System.Drawing.Size(323, 178);
             this.DepositBookGBox.TabIndex = 3;
             this.DepositBookGBox.TabStop = false;
@@ -166,7 +167,7 @@
             // 
             this.DepositBookBackBtn.BackColor = System.Drawing.Color.DarkCyan;
             this.DepositBookBackBtn.Location = new System.Drawing.Point(24, 117);
-            this.DepositBookBackBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DepositBookBackBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DepositBookBackBtn.Name = "DepositBookBackBtn";
             this.DepositBookBackBtn.Size = new System.Drawing.Size(279, 38);
             this.DepositBookBackBtn.TabIndex = 2;
@@ -177,7 +178,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.DarkCyan;
             this.button5.Location = new System.Drawing.Point(24, 26);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(279, 38);
             this.button5.TabIndex = 0;
@@ -188,7 +189,7 @@
             // 
             this.DepositBookListingBtn.BackColor = System.Drawing.Color.DarkCyan;
             this.DepositBookListingBtn.Location = new System.Drawing.Point(24, 71);
-            this.DepositBookListingBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DepositBookListingBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DepositBookListingBtn.Name = "DepositBookListingBtn";
             this.DepositBookListingBtn.Size = new System.Drawing.Size(279, 38);
             this.DepositBookListingBtn.TabIndex = 1;
@@ -201,9 +202,9 @@
             this.SortingGBox.Controls.Add(this.GraphicsBtn);
             this.SortingGBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SortingGBox.Location = new System.Drawing.Point(649, 359);
-            this.SortingGBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SortingGBox.Margin = new System.Windows.Forms.Padding(4);
             this.SortingGBox.Name = "SortingGBox";
-            this.SortingGBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SortingGBox.Padding = new System.Windows.Forms.Padding(4);
             this.SortingGBox.Size = new System.Drawing.Size(323, 143);
             this.SortingGBox.TabIndex = 4;
             this.SortingGBox.TabStop = false;
@@ -213,7 +214,7 @@
             // 
             this.SortingBtn.BackColor = System.Drawing.Color.DarkCyan;
             this.SortingBtn.Location = new System.Drawing.Point(21, 26);
-            this.SortingBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SortingBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SortingBtn.Name = "SortingBtn";
             this.SortingBtn.Size = new System.Drawing.Size(279, 38);
             this.SortingBtn.TabIndex = 0;
@@ -224,7 +225,7 @@
             // 
             this.GraphicsBtn.BackColor = System.Drawing.Color.DarkCyan;
             this.GraphicsBtn.Location = new System.Drawing.Point(21, 71);
-            this.GraphicsBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GraphicsBtn.Margin = new System.Windows.Forms.Padding(4);
             this.GraphicsBtn.Name = "GraphicsBtn";
             this.GraphicsBtn.Size = new System.Drawing.Size(279, 38);
             this.GraphicsBtn.TabIndex = 1;
@@ -242,7 +243,7 @@
             this.Controls.Add(this.BookGBox);
             this.Controls.Add(this.MemberGBox);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HomePageFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ana Sayfa";
