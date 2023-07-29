@@ -44,7 +44,7 @@
             this.BookNumberTxt = new System.Windows.Forms.TextBox();
             this.TelTxt = new System.Windows.Forms.TextBox();
             this.GenderComboBOx = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.addressLbl = new System.Windows.Forms.Label();
             this.addrestxt = new System.Windows.Forms.TextBox();
@@ -76,7 +76,7 @@
             // 
             this.TCLbl.AutoSize = true;
             this.TCLbl.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TCLbl.Location = new System.Drawing.Point(188, 188);
+            this.TCLbl.Location = new System.Drawing.Point(167, 190);
             this.TCLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TCLbl.Name = "TCLbl";
             this.TCLbl.Size = new System.Drawing.Size(28, 17);
@@ -98,7 +98,7 @@
             // 
             this.AgeLbl.AutoSize = true;
             this.AgeLbl.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AgeLbl.Location = new System.Drawing.Point(188, 242);
+            this.AgeLbl.Location = new System.Drawing.Point(167, 242);
             this.AgeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AgeLbl.Name = "AgeLbl";
             this.AgeLbl.Size = new System.Drawing.Size(32, 17);
@@ -120,7 +120,7 @@
             // 
             this.TelLbl.AutoSize = true;
             this.TelLbl.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TelLbl.Location = new System.Drawing.Point(188, 300);
+            this.TelLbl.Location = new System.Drawing.Point(167, 302);
             this.TelLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TelLbl.Name = "TelLbl";
             this.TelLbl.Size = new System.Drawing.Size(54, 17);
@@ -142,7 +142,7 @@
             // 
             this.BookNumLbl.AutoSize = true;
             this.BookNumLbl.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BookNumLbl.Location = new System.Drawing.Point(188, 350);
+            this.BookNumLbl.Location = new System.Drawing.Point(167, 351);
             this.BookNumLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BookNumLbl.Name = "BookNumLbl";
             this.BookNumLbl.Size = new System.Drawing.Size(139, 17);
@@ -202,16 +202,16 @@
             this.GenderComboBOx.Size = new System.Drawing.Size(155, 26);
             this.GenderComboBOx.TabIndex = 14;
             // 
-            // button1
+            // AddBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkCyan;
-            this.button1.Location = new System.Drawing.Point(386, 433);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 37);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Ekle";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.AddBtn.BackColor = System.Drawing.Color.DarkCyan;
+            this.AddBtn.Location = new System.Drawing.Point(386, 433);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(116, 37);
+            this.AddBtn.TabIndex = 15;
+            this.AddBtn.Text = "Ekle";
+            this.AddBtn.UseVisualStyleBackColor = false;
+            this.AddBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // ExitBtn
             // 
@@ -249,7 +249,7 @@
             this.Controls.Add(this.addrestxt);
             this.Controls.Add(this.addressLbl);
             this.Controls.Add(this.ExitBtn);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.GenderComboBOx);
             this.Controls.Add(this.TelTxt);
             this.Controls.Add(this.BookNumberTxt);
@@ -295,7 +295,7 @@
         private System.Windows.Forms.TextBox BookNumberTxt;
         private System.Windows.Forms.TextBox TelTxt;
         private System.Windows.Forms.ComboBox GenderComboBOx;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddBtn;
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Label addressLbl;
         private System.Windows.Forms.TextBox addrestxt;
