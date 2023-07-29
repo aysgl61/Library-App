@@ -40,5 +40,11 @@ namespace Library_App
             ListBooksFrm lstb = new ListBooksFrm();
             lstb.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            EscrowBookFrm ebf = new EscrowBookFrm();
+            ebf.ShowDialog();
+        }
     }
 }
