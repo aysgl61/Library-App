@@ -189,6 +189,7 @@
             // 
             // IadedateTimePicker
             // 
+            this.IadedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.IadedateTimePicker.Location = new System.Drawing.Point(120, 235);
             this.IadedateTimePicker.Name = "IadedateTimePicker";
             this.IadedateTimePicker.Size = new System.Drawing.Size(178, 27);
@@ -196,6 +197,7 @@
             // 
             // TeslimdateTimePicker
             // 
+            this.TeslimdateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TeslimdateTimePicker.Location = new System.Drawing.Point(120, 202);
             this.TeslimdateTimePicker.Name = "TeslimdateTimePicker";
             this.TeslimdateTimePicker.Size = new System.Drawing.Size(178, 27);
@@ -329,6 +331,7 @@
             this.TeslimBtn.TabIndex = 5;
             this.TeslimBtn.Text = "Teslim Et";
             this.TeslimBtn.UseVisualStyleBackColor = false;
+            this.TeslimBtn.Click += new System.EventHandler(this.TeslimBtn_Click);
             // 
             // CancelBtn
             // 
