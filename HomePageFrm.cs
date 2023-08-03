@@ -52,5 +52,11 @@ namespace Library_App
             ListEscrowBookFrm lebf = new ListEscrowBookFrm();
             lebf.ShowDialog();
         }
+
+        private void DepositBookBackBtn_Click(object sender, EventArgs e)
+        {
+            EscrowReturnFrm erf = new EscrowReturnFrm();
+            erf.ShowDialog();
+        }
     }
 }

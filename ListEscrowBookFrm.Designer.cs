@@ -101,6 +101,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "ListEscrowBookFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Emanet Kitap Listeleme İşlemleri";
             this.Load += new System.EventHandler(this.ListEscrowBookFrm_Load);
             this.panel1.ResumeLayout(false);

@@ -174,6 +174,7 @@
             this.DepositBookBackBtn.TabIndex = 2;
             this.DepositBookBackBtn.Text = "Emanet Kitap İade İşlemleri";
             this.DepositBookBackBtn.UseVisualStyleBackColor = false;
+            this.DepositBookBackBtn.Click += new System.EventHandler(this.DepositBookBackBtn_Click);
             // 
             // button5
             // 
