@@ -197,6 +197,7 @@
             this.DepositBookListingBtn.TabIndex = 1;
             this.DepositBookListingBtn.Text = "Emanet Kitap Listeleme İşlemleri";
             this.DepositBookListingBtn.UseVisualStyleBackColor = false;
+            this.DepositBookListingBtn.Click += new System.EventHandler(this.DepositBookListingBtn_Click);
             // 
             // SortingGBox
             // 

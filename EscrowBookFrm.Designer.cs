@@ -325,7 +325,7 @@
             // 
             this.TeslimBtn.BackColor = System.Drawing.Color.DarkCyan;
             this.TeslimBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TeslimBtn.Location = new System.Drawing.Point(712, 521);
+            this.TeslimBtn.Location = new System.Drawing.Point(475, 544);
             this.TeslimBtn.Name = "TeslimBtn";
             this.TeslimBtn.Size = new System.Drawing.Size(116, 37);
             this.TeslimBtn.TabIndex = 5;
@@ -337,11 +337,11 @@
             // 
             this.CancelBtn.BackColor = System.Drawing.Color.DarkCyan;
             this.CancelBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.CancelBtn.Location = new System.Drawing.Point(868, 518);
+            this.CancelBtn.Location = new System.Drawing.Point(847, 546);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(116, 37);
             this.CancelBtn.TabIndex = 6;
-            this.CancelBtn.Text = "İptal";
+            this.CancelBtn.Text = "Çıkış";
             this.CancelBtn.UseVisualStyleBackColor = false;
             this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
@@ -349,7 +349,7 @@
             // 
             this.DeleteBtn.BackColor = System.Drawing.Color.DarkCyan;
             this.DeleteBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteBtn.Location = new System.Drawing.Point(712, 564);
+            this.DeleteBtn.Location = new System.Drawing.Point(668, 546);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(116, 35);
             this.DeleteBtn.TabIndex = 7;

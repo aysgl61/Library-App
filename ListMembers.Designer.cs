@@ -50,12 +50,6 @@
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DeleteBtn = new System.Windows.Forms.Button();
-            this.TCFindTxt = new System.Windows.Forms.TextBox();
-            this.TCFindLbl = new System.Windows.Forms.Label();
-            this.libraryAppDataSet = new Library_App.LibraryAppDataSet();
-            this.memberBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.memberTableAdapter = new Library_App.LibraryAppDataSetTableAdapters.MemberTableAdapter();
             this.tcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adsoyadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,10 +58,16 @@
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.okukitapsayisiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.memberBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryAppDataSet = new Library_App.LibraryAppDataSet();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.TCFindTxt = new System.Windows.Forms.TextBox();
+            this.TCFindLbl = new System.Windows.Forms.Label();
+            this.memberTableAdapter = new Library_App.LibraryAppDataSetTableAdapters.MemberTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryAppDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryAppDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -284,51 +284,6 @@
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // DeleteBtn
-            // 
-            this.DeleteBtn.BackColor = System.Drawing.Color.DarkCyan;
-            this.DeleteBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteBtn.Location = new System.Drawing.Point(767, 488);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(116, 37);
-            this.DeleteBtn.TabIndex = 38;
-            this.DeleteBtn.Text = "Sil";
-            this.DeleteBtn.UseVisualStyleBackColor = false;
-            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
-            // 
-            // TCFindTxt
-            // 
-            this.TCFindTxt.Location = new System.Drawing.Point(575, 496);
-            this.TCFindTxt.Name = "TCFindTxt";
-            this.TCFindTxt.Size = new System.Drawing.Size(164, 22);
-            this.TCFindTxt.TabIndex = 40;
-            this.TCFindTxt.TextChanged += new System.EventHandler(this.TCFindTxt_TextChanged);
-            // 
-            // TCFindLbl
-            // 
-            this.TCFindLbl.AutoSize = true;
-            this.TCFindLbl.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TCFindLbl.Location = new System.Drawing.Point(501, 498);
-            this.TCFindLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.TCFindLbl.Name = "TCFindLbl";
-            this.TCFindLbl.Size = new System.Drawing.Size(53, 17);
-            this.TCFindLbl.TabIndex = 39;
-            this.TCFindLbl.Text = "TC ara";
-            // 
-            // libraryAppDataSet
-            // 
-            this.libraryAppDataSet.DataSetName = "LibraryAppDataSet";
-            this.libraryAppDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // memberBindingSource
-            // 
-            this.memberBindingSource.DataMember = "Member";
-            this.memberBindingSource.DataSource = this.libraryAppDataSet;
-            // 
-            // memberTableAdapter
-            // 
-            this.memberTableAdapter.ClearBeforeFill = true;
-            // 
             // tcDataGridViewTextBoxColumn
             // 
             this.tcDataGridViewTextBoxColumn.DataPropertyName = "tc";
@@ -393,6 +348,51 @@
             this.adresDataGridViewTextBoxColumn.Name = "adresDataGridViewTextBoxColumn";
             this.adresDataGridViewTextBoxColumn.Width = 125;
             // 
+            // memberBindingSource
+            // 
+            this.memberBindingSource.DataMember = "Member";
+            this.memberBindingSource.DataSource = this.libraryAppDataSet;
+            // 
+            // libraryAppDataSet
+            // 
+            this.libraryAppDataSet.DataSetName = "LibraryAppDataSet";
+            this.libraryAppDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.BackColor = System.Drawing.Color.DarkCyan;
+            this.DeleteBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteBtn.Location = new System.Drawing.Point(767, 488);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(116, 37);
+            this.DeleteBtn.TabIndex = 38;
+            this.DeleteBtn.Text = "Sil";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            // 
+            // TCFindTxt
+            // 
+            this.TCFindTxt.Location = new System.Drawing.Point(575, 496);
+            this.TCFindTxt.Name = "TCFindTxt";
+            this.TCFindTxt.Size = new System.Drawing.Size(164, 22);
+            this.TCFindTxt.TabIndex = 40;
+            this.TCFindTxt.TextChanged += new System.EventHandler(this.TCFindTxt_TextChanged);
+            // 
+            // TCFindLbl
+            // 
+            this.TCFindLbl.AutoSize = true;
+            this.TCFindLbl.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TCFindLbl.Location = new System.Drawing.Point(501, 498);
+            this.TCFindLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TCFindLbl.Name = "TCFindLbl";
+            this.TCFindLbl.Size = new System.Drawing.Size(53, 17);
+            this.TCFindLbl.TabIndex = 39;
+            this.TCFindLbl.Text = "TC ara";
+            // 
+            // memberTableAdapter
+            // 
+            this.memberTableAdapter.ClearBeforeFill = true;
+            // 
             // ListMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -422,7 +422,7 @@
             this.Controls.Add(this.NameLbl);
             this.Controls.Add(this.TCLbl);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListMembers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "";
@@ -431,8 +431,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryAppDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryAppDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
