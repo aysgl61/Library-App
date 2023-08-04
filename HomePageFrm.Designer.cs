@@ -40,14 +40,11 @@
             this.DepositBookBackBtn = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.DepositBookListingBtn = new System.Windows.Forms.Button();
-            this.SortingGBox = new System.Windows.Forms.GroupBox();
             this.SortingBtn = new System.Windows.Forms.Button();
-            this.GraphicsBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.MemberGBox.SuspendLayout();
             this.BookGBox.SuspendLayout();
             this.DepositBookGBox.SuspendLayout();
-            this.SortingGBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -151,15 +148,16 @@
             // 
             // DepositBookGBox
             // 
+            this.DepositBookGBox.Controls.Add(this.SortingBtn);
             this.DepositBookGBox.Controls.Add(this.DepositBookBackBtn);
             this.DepositBookGBox.Controls.Add(this.button5);
             this.DepositBookGBox.Controls.Add(this.DepositBookListingBtn);
             this.DepositBookGBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DepositBookGBox.Location = new System.Drawing.Point(77, 359);
+            this.DepositBookGBox.Location = new System.Drawing.Point(354, 322);
             this.DepositBookGBox.Margin = new System.Windows.Forms.Padding(4);
             this.DepositBookGBox.Name = "DepositBookGBox";
             this.DepositBookGBox.Padding = new System.Windows.Forms.Padding(4);
-            this.DepositBookGBox.Size = new System.Drawing.Size(323, 178);
+            this.DepositBookGBox.Size = new System.Drawing.Size(323, 219);
             this.DepositBookGBox.TabIndex = 3;
             this.DepositBookGBox.TabStop = false;
             this.DepositBookGBox.Text = "Emanet Kitap İşlemleri";
@@ -200,41 +198,17 @@
             this.DepositBookListingBtn.UseVisualStyleBackColor = false;
             this.DepositBookListingBtn.Click += new System.EventHandler(this.DepositBookListingBtn_Click);
             // 
-            // SortingGBox
-            // 
-            this.SortingGBox.Controls.Add(this.SortingBtn);
-            this.SortingGBox.Controls.Add(this.GraphicsBtn);
-            this.SortingGBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.SortingGBox.Location = new System.Drawing.Point(649, 359);
-            this.SortingGBox.Margin = new System.Windows.Forms.Padding(4);
-            this.SortingGBox.Name = "SortingGBox";
-            this.SortingGBox.Padding = new System.Windows.Forms.Padding(4);
-            this.SortingGBox.Size = new System.Drawing.Size(323, 143);
-            this.SortingGBox.TabIndex = 4;
-            this.SortingGBox.TabStop = false;
-            this.SortingGBox.Text = "Sıralama ve Grafikler";
-            // 
             // SortingBtn
             // 
             this.SortingBtn.BackColor = System.Drawing.Color.DarkCyan;
-            this.SortingBtn.Location = new System.Drawing.Point(21, 26);
+            this.SortingBtn.Location = new System.Drawing.Point(24, 163);
             this.SortingBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SortingBtn.Name = "SortingBtn";
             this.SortingBtn.Size = new System.Drawing.Size(279, 38);
             this.SortingBtn.TabIndex = 0;
-            this.SortingBtn.Text = "Sıralama";
+            this.SortingBtn.Text = "Emanet Verilen Kitaplar";
             this.SortingBtn.UseVisualStyleBackColor = false;
-            // 
-            // GraphicsBtn
-            // 
-            this.GraphicsBtn.BackColor = System.Drawing.Color.DarkCyan;
-            this.GraphicsBtn.Location = new System.Drawing.Point(21, 71);
-            this.GraphicsBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.GraphicsBtn.Name = "GraphicsBtn";
-            this.GraphicsBtn.Size = new System.Drawing.Size(279, 38);
-            this.GraphicsBtn.TabIndex = 1;
-            this.GraphicsBtn.Text = "Grafikler";
-            this.GraphicsBtn.UseVisualStyleBackColor = false;
+            this.SortingBtn.Click += new System.EventHandler(this.SortingBtn_Click);
             // 
             // HomePageFrm
             // 
@@ -242,7 +216,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.SortingGBox);
             this.Controls.Add(this.DepositBookGBox);
             this.Controls.Add(this.BookGBox);
             this.Controls.Add(this.MemberGBox);
@@ -256,7 +229,6 @@
             this.MemberGBox.ResumeLayout(false);
             this.BookGBox.ResumeLayout(false);
             this.DepositBookGBox.ResumeLayout(false);
-            this.SortingGBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -268,7 +240,6 @@
         private System.Windows.Forms.GroupBox MemberGBox;
         private System.Windows.Forms.GroupBox BookGBox;
         private System.Windows.Forms.GroupBox DepositBookGBox;
-        private System.Windows.Forms.GroupBox SortingGBox;
         private System.Windows.Forms.Button MemberListingBtn;
         private System.Windows.Forms.Button MemberAddBtn;
         private System.Windows.Forms.Button BookListingBtn;
@@ -276,7 +247,6 @@
         private System.Windows.Forms.Button DepositBookBackBtn;
         private System.Windows.Forms.Button DepositBookListingBtn;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button GraphicsBtn;
         private System.Windows.Forms.Button SortingBtn;
     }
 }

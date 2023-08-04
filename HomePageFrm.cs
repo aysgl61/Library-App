@@ -58,5 +58,11 @@ namespace Library_App
             EscrowReturnFrm erf = new EscrowReturnFrm();
             erf.ShowDialog();
         }
+
+        private void SortingBtn_Click(object sender, EventArgs e)
+        {
+            SortingFrm sfrm = new SortingFrm();
+            sfrm.ShowDialog();
+        }
     }
 }
