@@ -71,5 +71,21 @@ namespace Library_App
             }
 
         }
+
+        private void teslimalbtn_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("delete from EscrowBook where tc=@tc and kitapno=@kitapno", baglanti);  //geri verilen kitapları emanet kitap tablosundan sil
+            komut.Parameters.AddWithValue("@tc", dataGridView1.CurrentRow.Cells["tc"].Value.ToString());
+            komut.Parameters.AddWithValue("@kitapno", dataGridView1.CurrentRow.Cells["kitapno"].Value.ToString());
+            komut.ExecuteNonQuery();
+
+            //kitap kısmına emanet verildi tarzında bir şey ekleyip burda göster. 
+            baglanti.Close();
+
+            MessageBox.Show("Kitap iade edildi.");
+            daset.Tables["EscrowBook"].Clear();
+            Listele();
+        }
     }
 }

@@ -56,7 +56,7 @@
             this.HeaderLbl.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.HeaderLbl.Location = new System.Drawing.Point(342, 28);
             this.HeaderLbl.Name = "HeaderLbl";
-            this.HeaderLbl.Size = new System.Drawing.Size(417, 39);
+            this.HeaderLbl.Size = new System.Drawing.Size(407, 38);
             this.HeaderLbl.TabIndex = 0;
             this.HeaderLbl.Text = "Emanet Kitap İade İşlemleri";
             // 
@@ -93,6 +93,7 @@
             this.teslimalbtn.TabIndex = 3;
             this.teslimalbtn.Text = "Teslim Al";
             this.teslimalbtn.UseVisualStyleBackColor = false;
+            this.teslimalbtn.Click += new System.EventHandler(this.teslimalbtn_Click);
             // 
             // findtctxt
             // 
