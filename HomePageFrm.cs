@@ -64,5 +64,11 @@ namespace Library_App
             SortingFrm sfrm = new SortingFrm();
             sfrm.ShowDialog();
         }
+
+        private void excelbookbtn_Click(object sender, EventArgs e)
+        {
+            ExcelBookFrm ebf = new ExcelBookFrm();
+            ebf.ShowDialog();
+        }
     }
 }

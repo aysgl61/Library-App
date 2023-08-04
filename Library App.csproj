@@ -70,6 +70,12 @@
     <Compile Include="EscrowReturnFrm.Designer.cs">
       <DependentUpon>EscrowReturnFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExcelBookFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExcelBookFrm.Designer.cs">
+      <DependentUpon>ExcelBookFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomePageFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EscrowReturnFrm.resx">
       <DependentUpon>EscrowReturnFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExcelBookFrm.resx">
+      <DependentUpon>ExcelBookFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePageFrm.resx">
       <DependentUpon>HomePageFrm.cs</DependentUpon>

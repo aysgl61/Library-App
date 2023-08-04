@@ -41,6 +41,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.DepositBookListingBtn = new System.Windows.Forms.Button();
             this.SortingBtn = new System.Windows.Forms.Button();
+            this.excelbookbtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.MemberGBox.SuspendLayout();
             this.BookGBox.SuspendLayout();
@@ -75,7 +76,7 @@
             this.MemberGBox.Controls.Add(this.MemberListingBtn);
             this.MemberGBox.Controls.Add(this.MemberAddBtn);
             this.MemberGBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.MemberGBox.Location = new System.Drawing.Point(77, 171);
+            this.MemberGBox.Location = new System.Drawing.Point(13, 171);
             this.MemberGBox.Margin = new System.Windows.Forms.Padding(4);
             this.MemberGBox.Name = "MemberGBox";
             this.MemberGBox.Padding = new System.Windows.Forms.Padding(4);
@@ -110,14 +111,15 @@
             // 
             // BookGBox
             // 
+            this.BookGBox.Controls.Add(this.excelbookbtn);
             this.BookGBox.Controls.Add(this.BookListingBtn);
             this.BookGBox.Controls.Add(this.BookAddBtn);
             this.BookGBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BookGBox.Location = new System.Drawing.Point(649, 171);
+            this.BookGBox.Location = new System.Drawing.Point(689, 171);
             this.BookGBox.Margin = new System.Windows.Forms.Padding(4);
             this.BookGBox.Name = "BookGBox";
             this.BookGBox.Padding = new System.Windows.Forms.Padding(4);
-            this.BookGBox.Size = new System.Drawing.Size(323, 143);
+            this.BookGBox.Size = new System.Drawing.Size(323, 179);
             this.BookGBox.TabIndex = 2;
             this.BookGBox.TabStop = false;
             this.BookGBox.Text = "Kitap İşlemleri";
@@ -210,6 +212,18 @@
             this.SortingBtn.UseVisualStyleBackColor = false;
             this.SortingBtn.Click += new System.EventHandler(this.SortingBtn_Click);
             // 
+            // excelbookbtn
+            // 
+            this.excelbookbtn.BackColor = System.Drawing.Color.DarkCyan;
+            this.excelbookbtn.Location = new System.Drawing.Point(21, 133);
+            this.excelbookbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.excelbookbtn.Name = "excelbookbtn";
+            this.excelbookbtn.Size = new System.Drawing.Size(279, 38);
+            this.excelbookbtn.TabIndex = 2;
+            this.excelbookbtn.Text = "Excel ile Kitap Ekleme İşlemleri";
+            this.excelbookbtn.UseVisualStyleBackColor = false;
+            this.excelbookbtn.Click += new System.EventHandler(this.excelbookbtn_Click);
+            // 
             // HomePageFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -248,6 +262,7 @@
         private System.Windows.Forms.Button DepositBookListingBtn;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button SortingBtn;
+        private System.Windows.Forms.Button excelbookbtn;
     }
 }
 
