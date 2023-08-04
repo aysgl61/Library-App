@@ -52,16 +52,19 @@
             this.HeaderLbl.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.HeaderLbl.Location = new System.Drawing.Point(302, 28);
             this.HeaderLbl.Name = "HeaderLbl";
-            this.HeaderLbl.Size = new System.Drawing.Size(492, 39);
+            this.HeaderLbl.Size = new System.Drawing.Size(479, 38);
             this.HeaderLbl.TabIndex = 0;
             this.HeaderLbl.Text = "Excel\'den Kitap Ekleme İşlemleri";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(184, 152);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(738, 333);
@@ -89,6 +92,7 @@
             this.kaydetbtn.TabIndex = 3;
             this.kaydetbtn.Text = "Kaydet";
             this.kaydetbtn.UseVisualStyleBackColor = false;
+            this.kaydetbtn.Click += new System.EventHandler(this.kaydetbtn_Click);
             // 
             // ExcelBookFrm
             // 

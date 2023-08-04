@@ -34,14 +34,14 @@
             this.MemberListingBtn = new System.Windows.Forms.Button();
             this.MemberAddBtn = new System.Windows.Forms.Button();
             this.BookGBox = new System.Windows.Forms.GroupBox();
+            this.excelbookbtn = new System.Windows.Forms.Button();
             this.BookListingBtn = new System.Windows.Forms.Button();
             this.BookAddBtn = new System.Windows.Forms.Button();
             this.DepositBookGBox = new System.Windows.Forms.GroupBox();
+            this.SortingBtn = new System.Windows.Forms.Button();
             this.DepositBookBackBtn = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.DepositBookListingBtn = new System.Windows.Forms.Button();
-            this.SortingBtn = new System.Windows.Forms.Button();
-            this.excelbookbtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.MemberGBox.SuspendLayout();
             this.BookGBox.SuspendLayout();
@@ -124,10 +124,22 @@
             this.BookGBox.TabStop = false;
             this.BookGBox.Text = "Kitap İşlemleri";
             // 
+            // excelbookbtn
+            // 
+            this.excelbookbtn.BackColor = System.Drawing.Color.DarkCyan;
+            this.excelbookbtn.Location = new System.Drawing.Point(21, 89);
+            this.excelbookbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.excelbookbtn.Name = "excelbookbtn";
+            this.excelbookbtn.Size = new System.Drawing.Size(279, 38);
+            this.excelbookbtn.TabIndex = 2;
+            this.excelbookbtn.Text = "Excel ile Kitap Ekleme İşlemleri";
+            this.excelbookbtn.UseVisualStyleBackColor = false;
+            this.excelbookbtn.Click += new System.EventHandler(this.excelbookbtn_Click);
+            // 
             // BookListingBtn
             // 
             this.BookListingBtn.BackColor = System.Drawing.Color.DarkCyan;
-            this.BookListingBtn.Location = new System.Drawing.Point(21, 89);
+            this.BookListingBtn.Location = new System.Drawing.Point(21, 133);
             this.BookListingBtn.Margin = new System.Windows.Forms.Padding(4);
             this.BookListingBtn.Name = "BookListingBtn";
             this.BookListingBtn.Size = new System.Drawing.Size(279, 38);
@@ -164,6 +176,18 @@
             this.DepositBookGBox.TabStop = false;
             this.DepositBookGBox.Text = "Emanet Kitap İşlemleri";
             // 
+            // SortingBtn
+            // 
+            this.SortingBtn.BackColor = System.Drawing.Color.DarkCyan;
+            this.SortingBtn.Location = new System.Drawing.Point(24, 163);
+            this.SortingBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.SortingBtn.Name = "SortingBtn";
+            this.SortingBtn.Size = new System.Drawing.Size(279, 38);
+            this.SortingBtn.TabIndex = 0;
+            this.SortingBtn.Text = "Emanet Verilen Kitaplar";
+            this.SortingBtn.UseVisualStyleBackColor = false;
+            this.SortingBtn.Click += new System.EventHandler(this.SortingBtn_Click);
+            // 
             // DepositBookBackBtn
             // 
             this.DepositBookBackBtn.BackColor = System.Drawing.Color.DarkCyan;
@@ -199,30 +223,6 @@
             this.DepositBookListingBtn.Text = "Emanet Kitap Listeleme İşlemleri";
             this.DepositBookListingBtn.UseVisualStyleBackColor = false;
             this.DepositBookListingBtn.Click += new System.EventHandler(this.DepositBookListingBtn_Click);
-            // 
-            // SortingBtn
-            // 
-            this.SortingBtn.BackColor = System.Drawing.Color.DarkCyan;
-            this.SortingBtn.Location = new System.Drawing.Point(24, 163);
-            this.SortingBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.SortingBtn.Name = "SortingBtn";
-            this.SortingBtn.Size = new System.Drawing.Size(279, 38);
-            this.SortingBtn.TabIndex = 0;
-            this.SortingBtn.Text = "Emanet Verilen Kitaplar";
-            this.SortingBtn.UseVisualStyleBackColor = false;
-            this.SortingBtn.Click += new System.EventHandler(this.SortingBtn_Click);
-            // 
-            // excelbookbtn
-            // 
-            this.excelbookbtn.BackColor = System.Drawing.Color.DarkCyan;
-            this.excelbookbtn.Location = new System.Drawing.Point(21, 133);
-            this.excelbookbtn.Margin = new System.Windows.Forms.Padding(4);
-            this.excelbookbtn.Name = "excelbookbtn";
-            this.excelbookbtn.Size = new System.Drawing.Size(279, 38);
-            this.excelbookbtn.TabIndex = 2;
-            this.excelbookbtn.Text = "Excel ile Kitap Ekleme İşlemleri";
-            this.excelbookbtn.UseVisualStyleBackColor = false;
-            this.excelbookbtn.Click += new System.EventHandler(this.excelbookbtn_Click);
             // 
             // HomePageFrm
             // 
