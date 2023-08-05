@@ -17,6 +17,7 @@ namespace Library_App
             InitializeComponent();
         }
 
+        
         SqlConnection baglanti = new SqlConnection("Data Source=LAPTOP-9KCML05V;Initial Catalog=LibraryApp;Integrated Security=True"); //veritabanına bağlandık
 
 
@@ -30,6 +31,7 @@ namespace Library_App
             baglanti.Open();  //önce veritabanına olan bağlantıyı açtık
             SqlCommand komut = new SqlCommand("insert into Books(kitapnumarasi,kitapadi,yazari,yayinevi,sayfasayisi,turu) values(@kitapnumarasi,@kitapadi,@yazari,@yayinevi,@sayfasayisi,@turu)", baglanti); //komut oluşturmak için obje oluşturduk
 
+            
             komut.Parameters.AddWithValue("@kitapnumarasi", BookNumberTxt.Text);  //form üzerinde girmiş olduğumuz text'leri veritabanına ekliyoruz
             komut.Parameters.AddWithValue("@kitapadi", BookNameTxt.Text);
             komut.Parameters.AddWithValue("@yazari", WriterTxt.Text);

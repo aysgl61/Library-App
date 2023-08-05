@@ -105,6 +105,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "ExcelBookFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Excel\'den Kitap Ekleme Sayfası";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

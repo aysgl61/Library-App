@@ -45,7 +45,7 @@ namespace Library_App
             {
                 Listele();
             }
-            else if (FilterComboBox.SelectedIndex == 1) //geciken kitapları listele
+            else if (FilterComboBox.SelectedIndex == 2) //geciken kitapları listele
             {
                 baglanti.Open();
                 SqlDataAdapter adtr = new SqlDataAdapter("select *from EscrowBook where '"+DateTime.Now.ToShortDateString()+"'>iadetarihi ", baglanti); //şu anın tarihi iade tarihinden geçse kitap, zamanında getirilmemiştir
@@ -53,7 +53,7 @@ namespace Library_App
                 dataGridView1.DataSource = daset.Tables["EscrowBook"];
                 baglanti.Close();
             }
-            else if (FilterComboBox.SelectedIndex == 2) //gecikmeyen kitapları listele
+            else if (FilterComboBox.SelectedIndex == 1) //gecikmeyen kitapları listele
             {
                 baglanti.Open();
                 SqlDataAdapter adtr = new SqlDataAdapter("select *from EscrowBook where '" + DateTime.Now.ToShortDateString() + "'<=iadetarihi ", baglanti); //şu anın tarihi iade tarihini geçmemişse kitap, zamanında getirilmiştir

@@ -46,34 +46,36 @@ namespace Library_App
                 NameTxt.Text = read["adsoyad"].ToString();
                 AgeTxt.Text = read["yas"].ToString();
                 GenderComboBOx.Text = read["cinsiyet"].ToString();
+                addresstxt.Text = read["adres"].ToString();
                 TelTxt.Text = read["telefon"].ToString();
                 MailTxt.Text = read["email"].ToString();
                 BookNumberTxt.Text = read["okukitapsayisi"].ToString();
-                addresstxt.Text = read["adres"].ToString();
+                
             }
-
+           
             baglanti.Close();
+          
         }
 
         private void TCFindTxt_TextChanged(object sender, EventArgs e)
         {
-            // Textbox'tan girilen değeri alalım
+            
             string tcValue = TCFindTxt.Text.Trim();
 
-            // Eğer girilen değer boş ise, veritabanından tüm verileri çekelim
+            
             if (string.IsNullOrEmpty(tcValue))
             {
                 ListMember();
                 return;
             }
 
-            // Girilen değeri içeren verileri çekmek için parametreli sorgu kullanalım
+           
             string query = "SELECT * FROM Member WHERE tc LIKE @tc";
 
-            // Parametre oluşturalım
+           
             SqlParameter parameter = new SqlParameter("@tc", "%" + tcValue + "%");
 
-            // Bağlantıyı açalım ve verileri çekelim
+            
             try
             {
                 baglanti.Open();
@@ -85,12 +87,12 @@ namespace Library_App
             }
             catch (Exception ex)
             {
-                // Hata durumunda hata mesajını gösterelim
+                
                 MessageBox.Show("Hata: " + ex.Message);
             }
             finally
             {
-                // Bağlantıyı kapatalım
+                
                 baglanti.Close();
             }
         }
@@ -103,34 +105,29 @@ namespace Library_App
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bu kaydı silmek mi istiyorsunuz?", "Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialog;
+            dialog = MessageBox.Show("Bu üyeyi silmek istiyor musunuz?","Sil",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
-            if (dialogResult == DialogResult.Yes)
+            if (dialog == DialogResult.Yes)
             {
-                if (dataGridView1.CurrentRow != null)
-                {
-                    try
-                    {
-                        string selectedTC = dataGridView1.CurrentRow.Cells["tc"].Value.ToString();
+                baglanti.Open();
+                SqlCommand komut = new SqlCommand("delete from Member where tc=@tc", baglanti);
+                komut.Parameters.AddWithValue("@tc", dataGridView1.CurrentRow.Cells["tc"].Value.ToString());
+                komut.ExecuteNonQuery();
+                baglanti.Close();
 
-                        baglanti.Open();
-                        SqlCommand komut = new SqlCommand("DELETE FROM Member WHERE tc=@tc", baglanti);
-                        komut.Parameters.AddWithValue("@tc", selectedTC);
-                        komut.ExecuteNonQuery();
-                        baglanti.Close();
+                MessageBox.Show("Silme işlemi gerçekleştirildi.");
+                daset.Tables["Member"].Clear();
 
-                        MessageBox.Show("Silme işlemi gerçekleşti.");
+               
 
-                        daset.Tables["Member"].Clear();
-                        ListMember();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Hata: " + ex.Message);
-                    }
-                }
+                Clear();
+                ListMember();
             }
+
+
         }
+
 
 
 
@@ -178,6 +175,12 @@ namespace Library_App
             daset.Tables["Member"].Clear();
             ListMember();
 
+            Clear();
+            ListMember();
+        }
+
+        private void Clear()
+        {
             foreach (Control item in Controls)
             {
                 if (item is TextBox)
@@ -185,10 +188,8 @@ namespace Library_App
                     item.Text = "";
                 }
             }
-            ListMember();
         }
 
-       
-
+      
     }
 }

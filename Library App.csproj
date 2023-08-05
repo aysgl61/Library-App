@@ -58,6 +58,7 @@
     <Compile Include="AddMemberFrm.Designer.cs">
       <DependentUpon>AddMemberFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Connection.cs" />
     <Compile Include="EscrowBookFrm.cs">
       <SubType>Form</SubType>
     </Compile>
