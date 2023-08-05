@@ -33,6 +33,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.secbtn = new System.Windows.Forms.Button();
             this.kaydetbtn = new System.Windows.Forms.Button();
+            this.exitbtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +75,7 @@
             // 
             this.secbtn.BackColor = System.Drawing.Color.DarkCyan;
             this.secbtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.secbtn.Location = new System.Drawing.Point(298, 505);
+            this.secbtn.Location = new System.Drawing.Point(223, 505);
             this.secbtn.Name = "secbtn";
             this.secbtn.Size = new System.Drawing.Size(116, 37);
             this.secbtn.TabIndex = 2;
@@ -86,7 +87,7 @@
             // 
             this.kaydetbtn.BackColor = System.Drawing.Color.DarkCyan;
             this.kaydetbtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kaydetbtn.Location = new System.Drawing.Point(667, 505);
+            this.kaydetbtn.Location = new System.Drawing.Point(486, 505);
             this.kaydetbtn.Name = "kaydetbtn";
             this.kaydetbtn.Size = new System.Drawing.Size(116, 37);
             this.kaydetbtn.TabIndex = 3;
@@ -94,12 +95,25 @@
             this.kaydetbtn.UseVisualStyleBackColor = false;
             this.kaydetbtn.Click += new System.EventHandler(this.kaydetbtn_Click);
             // 
+            // exitbtn
+            // 
+            this.exitbtn.BackColor = System.Drawing.Color.DarkCyan;
+            this.exitbtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.exitbtn.Location = new System.Drawing.Point(777, 505);
+            this.exitbtn.Name = "exitbtn";
+            this.exitbtn.Size = new System.Drawing.Size(116, 37);
+            this.exitbtn.TabIndex = 4;
+            this.exitbtn.Text = "Çıkış";
+            this.exitbtn.UseVisualStyleBackColor = false;
+            this.exitbtn.Click += new System.EventHandler(this.exitbtn_Click);
+            // 
             // ExcelBookFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.exitbtn);
             this.Controls.Add(this.kaydetbtn);
             this.Controls.Add(this.secbtn);
             this.Controls.Add(this.dataGridView1);
@@ -121,5 +135,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button secbtn;
         private System.Windows.Forms.Button kaydetbtn;
+        private System.Windows.Forms.Button exitbtn;
     }
 }
